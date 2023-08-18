@@ -706,6 +706,10 @@ func (tn *ChainNode) Gentx(ctx context.Context, name string, genesisSelfDelegati
 		"--keyring-backend", keyring.BackendTest,
 		"--chain-id", tn.Chain.Config().ChainID)
 
+	if tn.Chain.Config().Images[0].Repository == "archway" {
+		command = append(command, "--fees", "180000000000000000"+genesisSelfDelegation.GetDenom())
+	}
+
 	_, _, err := tn.ExecBin(ctx, command...)
 	return err
 }
