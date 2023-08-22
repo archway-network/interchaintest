@@ -822,12 +822,12 @@ func (c *CosmosChain) Start(testName string, ctx context.Context, additionalGene
 	chainCfg := c.Config()
 
 	genesisAmount := types.Coin{
-		Amount: types.NewInt(10_000_000_000_000),
+		Amount: types.NewInt(9_000_000_000_000_000_000),
 		Denom:  chainCfg.Denom,
 	}
 
 	genesisSelfDelegation := types.Coin{
-		Amount: types.NewInt(5_000_000_000_000),
+		Amount: types.NewInt(1_000_000_000_000_000_000),
 		Denom:  chainCfg.Denom,
 	}
 
